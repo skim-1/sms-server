@@ -11,8 +11,8 @@ const NOTIFYRE_API_URL = 'https://api.notifyre.com/send-sms';
 // Dummy data - replace with actual database queries
 const getRecipients = async () => {
   return [
-    { phone: '+1234567890' },
-    { phone: '+0987654321' },
+    { phone: '+12817266900' },
+    { phone: '+18328178850' },
     // Add more recipients
   ];
 };
