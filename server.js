@@ -12,8 +12,9 @@ const notifyreApiUrl = process.env.NOTIFYRE_API_URL;
 
 app.post('/typeform-webhook', (req, res) => {
   const phoneNumber = req.body.form_response.answers.find(
-    (answer) => answer.field.ref === 'phone_number'
-  ).text;
+    answer => answer.type === 'phone_number'
+  ).phone_number;
+  
 
   console.log(phoneNumber)
 
@@ -56,7 +57,7 @@ app.post('/send-sms', (req, res) => {
       value: phoneNumber,
     })),
     From: process.env.NOTIFYRE_PHONE_NUMBER,
-    AddUnsubscribeLink: true,
+    AddUnsubscribeLink: false,
   };
 
   axios
