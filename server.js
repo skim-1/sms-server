@@ -15,6 +15,8 @@ app.post('/typeform-webhook', (req, res) => {
     (answer) => answer.field.ref === 'phone_number'
   ).text;
 
+  console.log(phoneNumber)
+
   const smsData = {
     Body: 'Thanks for filling out the form!',
     Recipients: [
